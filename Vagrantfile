@@ -34,6 +34,6 @@ usermod -aG docker vagrant
 SCRIPT
 
 Vagrant.configure("2") do |config|
-    config.vm.box = "debian/stretch64"
+    config.vm.box = "debian/contrib-stretch64"
     config.vm.provision "shell", inline: $script
 end
