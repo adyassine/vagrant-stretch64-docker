@@ -24,7 +24,7 @@ apt-get update && apt-get install -y --no-install-recommends \
 
 echo "Installing docker via apt repo..."
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
-apt-key fingerprint 0EBFCD88 &> /dev/null
+apt-key fingerprint 0EBFCD88
 
 add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
