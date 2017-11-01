@@ -31,6 +31,12 @@ chmod +x /usr/local/bin/docker-compose
 groupadd docker &> /dev/null
 usermod -aG docker vagrant
 
+echo "Writing docker aliases..."
+cat > /etc/profile.d/00-aliases.sh <<EOF
+alias d="docker"
+alias dc="docker-compose"
+EOF
+
 SCRIPT
 
 def get_ipaddr(hostname, default)
