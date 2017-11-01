@@ -38,8 +38,10 @@ echo "Installing docker-compose from source..."
 curl -fsSL https://github.com/docker/compose/releases/download/#{COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
+echo "Adding vagrant user to docker and adm groups..."
 groupadd docker &> /dev/null
 usermod -aG docker vagrant
+usermod -aG adm vagrant
 
 echo "Writing docker aliases..."
 cat > /etc/profile.d/00-aliases.sh <<EOF
@@ -47,6 +49,7 @@ alias d="docker"
 alias dc="docker-compose"
 EOF
 
+echo "Enojy! :)"
 SCRIPT
 
 def get_ipaddr(hostname, default)
