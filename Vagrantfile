@@ -50,6 +50,10 @@ alias d="docker"
 alias dc="docker-compose"
 EOF
 
+echo "Install kernel check-config script"
+wget https://github.com/docker/docker/raw/master/contrib/check-config.sh
+chmod +x check-config.sh
+
 echo "Enojy! :)"
 SCRIPT
 
